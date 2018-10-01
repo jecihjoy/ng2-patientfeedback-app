@@ -1,0 +1,30 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"><img src="assets/ampath1.png" style="width: 1em;" alt="logo"></a>
+      <a class="navbar-brand" href="#">POC Patient Feedback</a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a  routerLink="/login" style="cursor: pointer;"(click)="onLogout()"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+    <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12" >
+      <h2>WELCOME!</h2>
+      <h3>Your feedback will be highly appreciated.</h3>
+      <br><br>
+      <div style="text-align: left">
+      <button type="button" class="btn btn-danger" (click)="onCancel()">Cancel survey</button>
+      <button type="button"  class="btn btn-success button" (click)="onStart()">Start survey</button>
+    </div>
+    </div>
+    </div>
+    <hr>
+  </div>

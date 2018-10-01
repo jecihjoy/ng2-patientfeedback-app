@@ -1,0 +1,60 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"><img src="assets/ampath1.png" style="width: 1em;" alt="logo"></a>
+      <a class="navbar-brand" href="#">POC Patient Feedback</a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a  routerLink="/login" style="cursor: pointer;" (click)="onLogout()"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid" style="margin-left: 0px">
+  <div class="row" style="margin-left: 0px">
+    <form (ngSubmit)="saveClinic()" action="">
+      <div class="row">
+        <label for="text" style="font-size: 18px; margin-left: 15px">Select Department:</label>
+      </div>
+      <div class="row">
+        <div class="col-md-10">
+          <mat-card>
+            <div class="row">
+              <div class="col-md-10">
+                <div *ngFor="let elem of data" class="col-md-2 col-sm-4 col-xs-6">
+                  <input style="margin:10px" type="checkbox" name="deptValue" value="{{elem.uuid}}" (change)="onCheckboxChange(elem,$event)" />{{elem.name}}
+                </div>
+              </div>
+            </div>
+          </mat-card>
+        </div>
+      </div>
+      <div class="row">
+        <div *ngFor="let data of deptPrograms" class="col-md-10">
+          <mat-card>
+            <div class="row">
+              <label for="text" style="font-size: 18px; margin-left: 15px">{{data.deptname}} Programs</label>
+            </div>
+            <mat-card>
+              <div class="row" style="margin-bottom:20px">
+                <div class="col-md-10">
+                  <div class="col-md-6 col-sm-8 col-xs-6">
+                    <!-- <mat-checkbox>{{data.progname}}</mat-checkbox> -->
+                    <input style="margin:10px" type="checkbox" name="progValue" value="{{data.proguuid}}" (change)="getValues(data,$event)" />{{data.progname}}
+                  </div>
+                </div>
+              </div>
+            </mat-card>
+          </mat-card>
+        </div>
+      </div>
+      <div class="row" style="margin-left: 30px; margin-top: 30px">
+        <button (click)="onSave()" class="btn btn-success btn-large" mat-raised-button>Next</button>
+      </div>
+    </form>
+  </div>
+</div>
