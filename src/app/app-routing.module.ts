@@ -58,7 +58,7 @@ const appRoutes = [
     CommonModule,
     BrowserModule,
     HttpModule,
-    RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(appRoutes, { useHash: true }),
   ],
   declarations: [
 
