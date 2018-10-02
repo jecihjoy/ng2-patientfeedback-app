@@ -11,9 +11,7 @@ before_install:
 - npm i -g npm@^3
 - npm i -g brfs
 script:
-# - npm run lint
-# - npm run test
-- npm run build:docker
+- npm run build:prod
 sudo: required
 addons:
   apt:
@@ -21,8 +19,8 @@ addons:
     - sshpass
     - google-chrome-stable
 after_success:
-- mv dist $TRAVIS_BRANCH
-- tar -czf build.tgz $TRAVIS_BRANCH
+- mv dist survey-app
+- tar -czf build.tgz survey-app
 - export SSHPASS=$DEPLOY_PASS
 - sshpass -e scp -o stricthostkeychecking=no build.tgz $DEPLOY_USER@$DEPLOY_HOST:./
 - sshpass -e ssh -o stricthostkeychecking=no $DEPLOY_USER@$DEPLOY_HOST ./deploy-build.sh

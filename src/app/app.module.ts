@@ -31,7 +31,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { SuccessComponent } from './success/success.component';
 import { CancelPageComponent } from './cancel-page/cancel-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { SurveyEditorComponent } from './survey.editor.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +43,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ClinicTypeComponent,
     WelcomeComponent,
     SuccessComponent,
-    CancelPageComponent
+    CancelPageComponent,
+    SurveyEditorComponent
   ],
   imports: [
     BrowserModule,
