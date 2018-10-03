@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 
-// const BASEURL = 'https://ngx.ampath.or.ke/patient-feedbackserver/';
-const BASEURL = 'http://localhost:5000/';
+const BASEURL = 'https://ngx.ampath.or.ke/patient-feedbackserver/';
 
 @Injectable()
 export class HttpService {
