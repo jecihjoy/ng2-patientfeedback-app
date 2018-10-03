@@ -15,14 +15,18 @@
           <label for="text" style="font-size: 16px">Select Location:</label>
         </div>
         <div class="row">
+          <!-- <ng-select [(ngModel)]="selectedLocationId">
+            <ng-option *ngFor="let location of locationArray" [value]="location.id" [disabled]="location.disabled">location.display</ng-option>
+            <ng-option [value]="'custom'">Custom</ng-option>
+          </ng-select> -->
           <select id="exampleFormControlSelect1" #location>
             <option selected disabled>Select Location</option>
-            <option *ngFor="let location of locationArray">{{ location.name }}</option>
+            <option *ngFor="let location of locationArray">{{ location.display }}</option>
           </select>
         </div>
       </div>
       <div class="row">
-          <button type="button" (click)="onSave(location.value)" class="btn btn-lg btn-primary btn-block btn-signin">Next</button>
+        <button type="button" (click)="onSave(location.value)" class="btn btn-lg btn-primary btn-block btn-signin">Next</button>
       </div>
     </form>
   </div>

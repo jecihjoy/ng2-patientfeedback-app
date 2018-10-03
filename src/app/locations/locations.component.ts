@@ -9,7 +9,7 @@ import { Response } from '@angular/http';
   styleUrls: ['./locations.component.css']
 })
 export class LocationsComponent implements OnInit {
-  locationArray: {'uuid': string, 'name': string}[];
+  locationArray: {'uuid': string, 'display': string}[];
   constructor(private router: Router,
               private httpService: HttpService,
               private route: ActivatedRoute) {}
@@ -18,8 +18,8 @@ export class LocationsComponent implements OnInit {
     if (location !== 'Select Location') {
       let loc_name;
       for (const loc of this.locationArray) {
-        if (loc.name === location) {
-          loc_name = loc.name;
+        if (loc.display === location) {
+          loc_name = loc.display;
         }
       }
       window.sessionStorage.setItem('location', loc_name);
