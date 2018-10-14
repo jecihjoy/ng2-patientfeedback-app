@@ -25,6 +25,7 @@ export class QuestionnaireComponent implements OnInit {
   }
 
   getSuveys(uuids) {
+    console.log(uuids);
     this.httpService.getSurveys(uuids).subscribe(
       (data: Response) => {
         this.json = data.json().survey;
@@ -36,6 +37,7 @@ export class QuestionnaireComponent implements OnInit {
     const department = 'not defined';
     const program = 'not defined';
     const location = window.sessionStorage.getItem('location');
+    console.log('locs', location);
 
     this.route.params.subscribe((params) => {
       const encounterInfo = {

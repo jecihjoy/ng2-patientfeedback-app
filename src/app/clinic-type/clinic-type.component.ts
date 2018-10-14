@@ -48,6 +48,7 @@ export class ClinicTypeComponent implements OnInit {
        }
       })
     }
+    console.log(this.myPrograms);
     window.sessionStorage.setItem('program_uuid', JSON.stringify(this.myPrograms));
   }
   onCheckboxChange(option, event) {

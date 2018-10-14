@@ -2,10 +2,22 @@ import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 
 const BASEURL = 'https://ngx.ampath.or.ke/patient-feedbackserver/';
+// const BASEURL = 'http://localhost:5100/';
 
 @Injectable()
 export class HttpService {
     constructor(private http: Http) {}
+
+    getQuestions(programs) {
+        return this.http.post(BASEURL + 'getQuestions', programs, {
+          headers: this.getCredentials()
+        });
+      }
+      getQuizAns(programsQa) {
+        return this.http.post(BASEURL + 'getAll', programsQa, {
+          headers: this.getCredentials()
+        });
+      }
 
     getCredentials() {
         const headers = new Headers();

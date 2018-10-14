@@ -15,6 +15,7 @@ export class LocationsComponent implements OnInit {
               private route: ActivatedRoute) {}
 
   onSave(location) {
+    console.log('uuid value', location);
     if (location !== 'Select Location') {
       let loc_name;
       for (const loc of this.locationArray) {
@@ -22,7 +23,7 @@ export class LocationsComponent implements OnInit {
           loc_name = loc.display;
         }
       }
-      window.sessionStorage.setItem('location', loc_name);
+      window.sessionStorage.setItem('location', location);
       this.router.navigate(['/clinic'], { relativeTo: this.route });
     }
   }

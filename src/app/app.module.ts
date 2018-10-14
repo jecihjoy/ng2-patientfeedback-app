@@ -13,6 +13,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import {MatSelectModule} from '@angular/material/select';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppMaterialModule } from './app-material.module';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 import { AuthenticationService } from './services/authentication.service';
 import { AuthGuardService } from './services/auth-guard.service';
@@ -45,7 +46,7 @@ import { SurveyEditorComponent } from './survey.editor.component';
     SuccessComponent,
     CancelPageComponent,
     SurveyEditorComponent
-  ],
+    ],
   imports: [
     BrowserModule,
     FormsModule,
@@ -57,6 +58,7 @@ import { SurveyEditorComponent } from './survey.editor.component';
     MatSelectModule,
     MatCardModule,
     AppMaterialModule,
+    NgxPaginationModule,
     BrowserAnimationsModule
   ],
   exports: [MatCardModule],
@@ -67,7 +69,7 @@ import { SurveyEditorComponent } from './survey.editor.component';
     AuthGuardService,
     LocalStorageService,
     SessionService,
-    SessionStorageService,],
+    SessionStorageService],
     entryComponents: [QuestionnaireComponent],
   bootstrap: [AppComponent]
 })
